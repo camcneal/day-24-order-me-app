@@ -1,8 +1,8 @@
 import $ from 'jquery';
-
+import store from '../store';
 
  function renderMenuItem (item) {
-   console.log('sdfsdfs');
+
   let li = $(`
     <li id="${item.get('id')}">
       <h3>${item.get('item')}</h3>
@@ -11,9 +11,8 @@ import $ from 'jquery';
     </li>
   `);
   li.on('click', (e) => {
-    console.log('anything');
+    store.orderModel.orderItem(item);
     console.log(item);
-    console.log(li);
   });
 return li;
 }

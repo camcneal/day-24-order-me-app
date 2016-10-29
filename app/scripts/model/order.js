@@ -9,8 +9,18 @@ defaults: {
     price: 0,
     items: [],
 },
-orderItem: function () {
-
+orderItem: function (item) {
+  console.log(this);
+  this.save({
+    tax: this.get('tax') + item.get('price')*.08,
+    price: this.get('price') + item.get('price'),
+    items: this.get('items').concat(item.get('item'))
+  }, {
+    success: (response) => {
+      console.log(response);
+    }
+  }
+);
 
 },
 calculate: function() {
