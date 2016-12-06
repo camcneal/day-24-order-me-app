@@ -5,8 +5,6 @@ import renderMenuItem from './MenuItemview';
 import store from '../store';
 
 function menu(appetizers, entrees, sides) {
-  console.log(renderMenuItem);
-    console.log();
     store.orderModel.calculate();
 
     const menuContent = $(`
@@ -16,34 +14,34 @@ function menu(appetizers, entrees, sides) {
       `);
 
     appetizers.on('update', (e) => {
-      appetizers.forEach(function(item, i, arr) {
-        let li = renderMenuItem(item);
-        menuContent.append(li);
-      });
+        appetizers.forEach(function(item, i, arr) {
+            let li = renderMenuItem(item);
+            menuContent.append(li);
+        });
     });
 
-      entrees.on('update', (e) => {
+    entrees.on('update', (e) => {
         entrees.forEach(function(item, i, arr) {
             let li = renderMenuItem(item);
-              menuContent.append(li);
-          });
+            menuContent.append(li);
         });
+    });
 
-      sides.on('update', (e) => {
+    sides.on('update', (e) => {
         sides.forEach(function(item, i, arr) {
-          console.log(item);
+            // console.log(item);
             let li = renderMenuItem(item);
-                menuContent.append(li);
-          });
+            menuContent.append(li);
         });
+    });
 
 
 
-                            //append my list
-                            //for each them
-                            // add listener
-                            console.log(menuContent);
-                            return menuContent;
+    //append my list
+    //for each them
+    // add listener
+    // console.log(menuContent);
+    return menuContent;
 }
 
 export default menu;

@@ -8,6 +8,7 @@ import Entrees from './collections/entrees';
 import Sides from './collections/sides';
 import Order from './model/order';
 
+
 let appetizers = new Appetizers();
 let entrees = new Entrees();
 let sides = new Sides();
@@ -22,7 +23,6 @@ const Router = Backbone.Router.extend({
     appetizers.fetch();
     entrees.fetch();
     sides.fetch();
-    console.log(entrees);
     $('.container').empty();
     $('.container').append(renderMenu(appetizers,entrees,sides),renderOrder(order));
 
