@@ -5,8 +5,6 @@ import renderMenuItem from './MenuItemview';
 import store from '../store';
 
 function menu(appetizers, entrees, sides) {
-    store.orderModel.calculate();
-
     const menuContent = $(`
       <ul class="Menu">
 

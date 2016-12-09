@@ -6,7 +6,7 @@ import orderContent from './Order';
   let li = $(`
     <li id="${item.get('id')}">
       <h3>${item.get('item')}</h3>
-      <span>${item.get('price')}</span>
+      $<span>${item.get('price')}</span>
       <p>${item.get('description')}</p>
     </li>
   `);

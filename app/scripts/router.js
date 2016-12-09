@@ -7,7 +7,8 @@ import Appetizers from './collections/appetizers';
 import Entrees from './collections/entrees';
 import Sides from './collections/sides';
 import Order from './model/order';
-
+import renderOrderSuccess from './views/OrderView';
+import store from './store';
 
 let appetizers = new Appetizers();
 let entrees = new Entrees();
@@ -30,9 +31,10 @@ const Router = Backbone.Router.extend({
 
   },
 
-  renderOrderItems: () => {
+  renderOrderSuccess: () => {
+    order.fetch();
     $('.container').empty();
-    $('.container').append(renderOrderSuccess());
+    $('.container').append(renderOrderSuccess(order));
 
   }
 
