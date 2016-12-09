@@ -11,6 +11,8 @@ function renderOrderSuccess(order) {
       <span>Congratulations Your order was recieved!!</span>
 
       <ul></ul>
+      <h3>Total:${store.orderModel.get('total')}</h3>
+
       </div>
       `)
 
@@ -23,9 +25,10 @@ function renderOrderSuccess(order) {
             <h4>${store.orderModel.get('items')[i].name}</h4>
             $<span>${store.orderModel.get('items')[i].total}</span>
             </p>
-            <h3>Total:${store.orderModel.get('total')}</h3>
 
                   `);
+
+
         orderItems.find('ul').append(li);
         orderItems.append(order)
     });
